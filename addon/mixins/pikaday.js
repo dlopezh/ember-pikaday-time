@@ -215,6 +215,7 @@ export default Ember.Mixin.create({
   },
 
   _updateOptions() {
+    if (this.get('isDestroyed')){ return; }
     this.get('pikaday').config(this.get('_options'));
   }
 });
